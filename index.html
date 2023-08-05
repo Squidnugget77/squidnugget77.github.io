@@ -14,13 +14,11 @@
         <input type="number" id="x2" step="any" required>
         <input type="number" id="y2" step="any" required>
         <br>
-        <label for="speed">Travel Speed:</label>
-        <input type="number" id="speed" step="any" required>
-        <br>
         <button type="button" onclick="calculateTravelTime()">Calculate</button>
     </form>
     <p>Angle: <span id="angle"></span> degrees</p>
-    <p>Travel Time: <span id="travel-time"></span> seconds</p>
+    <p>Travel Time (Running): <span id="travel-time-run"></span> seconds</p>
+	<p>Travel Time (Running and Jumping): <span id="travel-time-jump"></span> seconds</p>
 
     <script>
         function calculateAngle(x1, y1, x2, y2) {
@@ -36,6 +34,8 @@
         }
 
         function calculateTravelTime() {
+			const runSpeed = 5.612
+			const jumpSpeed = 7.127
             const x1 = parseFloat(document.getElementById('x1').value);
             const y1 = parseFloat(document.getElementById('y1').value);
             const x2 = parseFloat(document.getElementById('x2').value);
@@ -44,10 +44,13 @@
 
             const angleDeg = calculateAngle(x1, y1, x2, y2);
             const distance = calculateDistance(x1, y1, x2, y2);
-            const travelTime = distance / speed;
+            const travelTimeRunning = distance / runSpeed / 60;
+			const travelTimeJumping = distance / jumpSpeed / 60;
 
             document.getElementById('angle').textContent = angleDeg.toFixed(2);
-            document.getElementById('travel-time').textContent = travelTime.toFixed(2);
+            document.getElementById('travel-time-run').textContent = travelTimeRunning.toFixed(2);
+			document.getElementById('travel-time-jump').textContent = travelTimeJumping.toFixed(2);
+
         }
     </script>
 </body>
