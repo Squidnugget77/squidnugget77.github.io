@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shortest Travel Time Calculator</title>
+</head>
+<body>
+    <h1>Shortest Travel Time Calculator</h1>
+    <form id="calculator-form">
+        <label for="x1">Point 1 (x1, y1):</label>
+        <input type="number" id="x1" step="any" required>
+        <input type="number" id="y1" step="any" required>
+        <br>
+        <label for="x2">Point 2 (x2, y2):</label>
+        <input type="number" id="x2" step="any" required>
+        <input type="number" id="y2" step="any" required>
+        <br>
+        <label for="speed">Travel Speed:</label>
+        <input type="number" id="speed" step="any" required>
+        <br>
+        <button type="button" onclick="calculateTravelTime()">Calculate</button>
+    </form>
+    <p>Angle: <span id="angle"></span> degrees</p>
+    <p>Travel Time: <span id="travel-time"></span> seconds</p>
+
+    <script>
+        function calculateAngle(x1, y1, x2, y2) {
+            const deltaX = x2 - x1;
+            const deltaY = y2 - y1;
+            const angleRad = Math.atan2(deltaY, deltaX);
+            const angleDeg = angleRad * (180 / Math.PI);
+            return angleDeg;
+        }
+
+        function calculateDistance(x1, y1, x2, y2) {
+            return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        }
+
+        function calculateTravelTime() {
+            const x1 = parseFloat(document.getElementById('x1').value);
+            const y1 = parseFloat(document.getElementById('y1').value);
+            const x2 = parseFloat(document.getElementById('x2').value);
+            const y2 = parseFloat(document.getElementById('y2').value);
+            const speed = parseFloat(document.getElementById('speed').value);
+
+            const angleDeg = calculateAngle(x1, y1, x2, y2);
+            const distance = calculateDistance(x1, y1, x2, y2);
+            const travelTime = distance / speed;
+
+            document.getElementById('angle').textContent = angleDeg.toFixed(2);
+            document.getElementById('travel-time').textContent = travelTime.toFixed(2);
+        }
+    </script>
+</body>
+</html>
