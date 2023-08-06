@@ -44,8 +44,8 @@
 
             const angleDeg = calculateAngle(x1, y1, x2, y2);
             const distance = calculateDistance(x1, y1, x2, y2);
-            const travelTimeRunning = distance / runSpeed / 60;
-			const travelTimeJumping = distance / jumpSpeed / 60;
+            const travelTimeRunning = distance / runSpeed;
+			const travelTimeJumping = distance / jumpSpeed;
 
             document.getElementById('angle').textContent = angleDeg.toFixed(2);
             document.getElementById('travel-time-run').textContent = travelTimeRunning.toFixed(2);
