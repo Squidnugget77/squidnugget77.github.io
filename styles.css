@@ -1,7 +1,8 @@
 body {
     font-family: arial, serif;
     position: relative;
-    background-color: #e3e4eb;
+	background-color: #333;
+    color: #ffffff;
 }
 
 .container {
@@ -34,6 +35,6 @@ body {
 .footer-left a,
 .footer-right a {
     text-decoration: none;
-    color: #333;
+    background: #222;
     margin-right: 20px;
 }
