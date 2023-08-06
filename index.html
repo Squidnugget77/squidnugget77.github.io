@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Minecraft: Shortest Travel Time Calculator</title>
+    <title>Shortest Travel Time Calculator</title>
 </head>
 <body>
     <h1>Shortest Travel Time Calculator</h1>
@@ -17,8 +17,8 @@
         <button type="button" onclick="calculateTravelTime()">Calculate</button>
     </form>
     <p>Angle: <span id="angle"></span> degrees</p>
-    <p>Travel Time (Running): <span id="travel-time-run"></span> seconds</p>
-	<p>Travel Time (Running and Jumping): <span id="travel-time-jump"></span> seconds</p>
+    <p>Travel Time (Running Speed): <span id="travel-time-running"></span> minutes</p>
+    <p>Travel Time (Running and Jumping Speed): <span id="travel-time-jumping"></span> minutes</p>
 
     <script>
         function calculateAngle(x1, y1, x2, y2) {
@@ -34,23 +34,22 @@
         }
 
         function calculateTravelTime() {
-			const runSpeed = 5.612
-			const jumpSpeed = 7.127
             const x1 = parseFloat(document.getElementById('x1').value);
             const y1 = parseFloat(document.getElementById('y1').value);
             const x2 = parseFloat(document.getElementById('x2').value);
             const y2 = parseFloat(document.getElementById('y2').value);
-            const speed = parseFloat(document.getElementById('speed').value);
+            
+            const runningSpeed = 5.612;  // units per second
+            const jumpingSpeed = 7.127;  // units per second
 
             const angleDeg = calculateAngle(x1, y1, x2, y2);
             const distance = calculateDistance(x1, y1, x2, y2);
-            const travelTimeRunning = distance / runSpeed;
-			const travelTimeJumping = distance / jumpSpeed;
+            const travelTimeRunning = distance / runningSpeed / 60;  // Convert to minutes
+            const travelTimeJumping = distance / jumpingSpeed / 60;  // Convert to minutes
 
             document.getElementById('angle').textContent = angleDeg.toFixed(2);
-            document.getElementById('travel-time-run').textContent = travelTimeRunning.toFixed(2);
-			document.getElementById('travel-time-jump').textContent = travelTimeJumping.toFixed(2);
-
+            document.getElementById('travel-time-running').textContent = travelTimeRunning.toFixed(2);
+            document.getElementById('travel-time-jumping').textContent = travelTimeJumping.toFixed(2);
         }
     </script>
 </body>
