@@ -10,9 +10,9 @@ Calculates the exact angle for the shortest travel time in Minecraft, along with
 - [x] Minimalistic and simple UI.
 
 ## ✅ Information
-[![Licence](https://img.shields.io/github/license/Squidnugget77/squidnugget77.github.io?style=for-the-badge&color=1696A3)](./LICENSE)
+[![Licence](https://img.shields.io/github/license/Squidnugget77/squidnugget77.github.io?style=for-the-badge&color=ed976d)](./LICENSE)
 
 ### Donating
-<a href="https://www.buymeacoffee.com/hWngk6y"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=xeroKun&button_colour=1696A3&font_colour=FFFFFF&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" /></a>
+<a href="https://www.buymeacoffee.com/hWngk6y"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=xeroKun&button_colour=ed976d&font_colour=FFFFFF&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" /></a>
 
 Each donation is greatly appreciated, but not expected. Thank you!
