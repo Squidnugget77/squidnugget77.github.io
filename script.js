@@ -23,15 +23,18 @@ function calculateTravelTime() {
     const x2 = parseFloat(document.getElementById('x2').value);
     const z2 = parseFloat(document.getElementById('z2').value);
 
-    const runningSpeed = 5.612;  // units per second
-    const jumpingSpeed = 7.127;  // units per second
+	const walkingSpeed = 4.317;
+    const runningSpeed = 5.612;
+    const jumpingSpeed = 7.127;
 
     const angleDeg = calculateAngle(x1, z1, x2, z2);
     const distance = calculateDistance(x1, z1, x2, z2);
-    const travelTimeRunning = distance / runningSpeed / 60;  // Convert to minutes
-    const travelTimeJumping = distance / jumpingSpeed / 60;  // Convert to minutes
+	const travelTimeWalking = distance / walkingSpeed / 60;
+    const travelTimeRunning = distance / runningSpeed / 60;
+    const travelTimeJumping = distance / jumpingSpeed / 60;  
 
     document.getElementById('angle').textContent = angleDeg.toFixed(2);
+	document.getElementById('travel-time-walking').textContent = travelTimeWalking.toFixed(2);
     document.getElementById('travel-time-running').textContent = travelTimeRunning.toFixed(2);
     document.getElementById('travel-time-jumping').textContent = travelTimeJumping.toFixed(2);
 }
