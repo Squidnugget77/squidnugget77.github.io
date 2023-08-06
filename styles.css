@@ -1,8 +1,7 @@
 body {
     font-family: arial, serif;
     position: relative;
-	background-color: #333;
-    color: #ffffff;
+    background-color: #e3e4eb;
 }
 
 .container {
@@ -12,7 +11,7 @@ body {
 }
 
 .footer {
-    position: fixed;
+	position: fixed;
     right: 0;
     bottom: 0;
     width: 100%;
