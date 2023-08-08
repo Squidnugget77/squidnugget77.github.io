@@ -6,6 +6,11 @@ function calculateAngle(x1, z1, x2, z2) {
     const angleRad = Math.atan2(deltaZ, deltaX);
     let angleDeg = angleRad * (180 / Math.PI);
     angleDeg -= 90;
+
+	if (angleDeg < -180) {
+		angleDeg += 360
+	}
+	
 	
     return angleDeg;
 }
