@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minecraft Travel Time Mapper</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
+</head>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+	<div class="w3-bar w3-white w3-card" id="myNavbar">
+	  <a href="../index.html" class="w3-bar-item w3-button w3-wide">LOGO</a>
+	  <!-- Right-sided navbar links -->
+	  <div class="w3-right w3-hide-small">
+		<a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+		<div class="w3-dropdown-hover w3-hide-small">
+		  <button class=" w3-button"  title="More"><i class="fa fa-th"></i> PROJECTS <i class="fa fa-caret-down"></i></button>     
+		  <div class="w3-dropdown-content w3-bar-block w3-card-4">
+			<a href="#" class="w3-bar-item w3-button">Minecraft Travel Time Mapper</a>
+			<a href="#" class="w3-bar-item w3-button">Coming Soon</a>
+			<a href="#" class="w3-bar-item w3-button">Coming Soon</a>
+		  </div>
+		  </div>
+		  </div>
+		  </div>
+<!-- END NAVBAR -->  
+
+<body>
+    <div class="container">
+        <h1>Minecraft Travel Time Mapper</h1>
+        <form id="calculator-form">
+            <label for="x1">Point 1 (x1, z1):</label>
+            <input type="number" id="x1" step="any" required>
+            <input type="number" id="z1" step="any" required>
+            <br>
+            <label for="x2">Point 2 (x2, z2):</label>
+            <input type="number" id="x2" step="any" required>
+            <input type="number" id="z2" step="any" required>
+            <br>
+            <button type="button" onclick="calculateTravelTime()">Calculate</button>
+        </form>
+        <p>Angle: <span id="angle"></span> degrees</p>
+		<p>Travel Time (Walking Speed): <span id="travel-time-walking"></span> minutes</p>
+        <p>Travel Time (Running Speed): <span id="travel-time-running"></span> minutes</p>
+        <p>Travel Time (Running and Jumping Speed): <span id="travel-time-jumping"></span> minutes</p>
+    </div>
+        <div class="footer">
+            <p>Built by Luca Giannotti | <a href="https://github.com/squidnugget77/squidnugget77.github.io" target="_blank">Source on GitHub</a></p>
+        </div>
+    <script src="minecraftTravelTimeScript.js"></script>
+</body>
+</html>

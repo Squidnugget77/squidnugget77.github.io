@@ -1,31 +1,120 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Minecraft Travel Time Mapper</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/Images/cas-index-background.jpg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Minecraft Travel Time Mapper</h1>
-        <form id="calculator-form">
-            <label for="x1">Point 1 (x1, z1):</label>
-            <input type="number" id="x1" step="any" required>
-            <input type="number" id="z1" step="any" required>
-            <br>
-            <label for="x2">Point 2 (x2, z2):</label>
-            <input type="number" id="x2" step="any" required>
-            <input type="number" id="z2" step="any" required>
-            <br>
-            <button type="button" onclick="calculateTravelTime()">Calculate</button>
-        </form>
-        <p>Angle: <span id="angle"></span> degrees</p>
-		<p>Travel Time (Walking Speed): <span id="travel-time-walking"></span> minutes</p>
-        <p>Travel Time (Running Speed): <span id="travel-time-running"></span> minutes</p>
-        <p>Travel Time (Running and Jumping Speed): <span id="travel-time-jumping"></span> minutes</p>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+	  <div class="w3-dropdown-hover w3-hide-small">
+		<button class=" w3-button"  title="More"><i class="fa fa-cog"></i> PROJECTS <i class="fa fa-caret-down"></i></button>     
+		<div class="w3-dropdown-content w3-bar-block w3-card-4">
+		  <a href="Minecraft Travel Time Mapper/minecraftTravelTimeMapper.html" class="w3-bar-item w3-button">Minecraft Travel Time Mapper</a>
+		  <a href="#" class="w3-bar-item w3-button">Coming Soon</a>
+		  <a href="#" class="w3-bar-item w3-button">Coming Soon</a>
+		</div>
+		</div>
+
+      <a href="#IB" class="w3-bar-item w3-button"><i class="fa fa-desktop"></i> CAS PORTFOLIO</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+	  
     </div>
-        <div class="footer">
-            <p>Built by Luca Giannotti | <a href="https://github.com/squidnugget77/squidnugget77.github.io" target="_blank">Source on GitHub</a></p>
-        </div>
-    <script src="script.js"></script>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+  <div class="w3-dropdown-hover w3-hide-small">
+	<button class=" w3-button"  title="More"><i class="fa fa-cog"></i> PROJECTS <i class="fa fa-caret-down"></i></button>     
+	<div class="w3-dropdown-content w3-bar-block w3-card-4">
+	  <a href="Minecraft Travel Time Mapper/minecraftTravelTimeMapper.html" class="w3-bar-item w3-button">Minecraft Travel Time Mapper</a>
+	  <a href="#" class="w3-bar-item w3-button">Coming Soon</a>
+	  <a href="#" class="w3-bar-item w3-button">Coming Soon</a>
+	</div>
+	</div>
+
+  <a href="#IB" class="w3-bar-item w3-button"><i class="fa fa-desktop"></i> CAS PORTFOLIO</a>
+  <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Luca Giannotti</span><br>
+    <span class="w3-large"> ❝ Train yourself to let go of everything you fear to lose ❞</span>
+  </div> 
+  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</header>
+
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
 </body>
 </html>

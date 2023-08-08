@@ -35,3 +35,10 @@ function calculateTravelTime() {
     document.getElementById('travel-time-running').textContent = travelTimeRunning.toFixed(2);
     document.getElementById('travel-time-jumping').textContent = travelTimeJumping.toFixed(2);
 }
+
+// script.js
+document.querySelector('.projects-tab a').addEventListener('click', function(event) {
+    event.preventDefault();
+    const projectsSection = document.querySelector('#projects');
+    projectsSection.scrollIntoView({ behavior: 'smooth' });
+});
