@@ -1,12 +1,11 @@
 ![12f2d843f320e42a7712bb806dc20970](https://github.com/Squidnugget77/squidnugget77.github.io/assets/101853174/59f8bf68-de86-4006-8927-49841a990930)
-## Minecraft Travel Time Mapper
+## Portfolio and Project Manager
 
-Calculates the exact angle for the shortest travel time in Minecraft, along with the time in minutes.
+Hosts all of my projects in one accessible website.
 
-## 📝Features
-- [x] Select two coordinates (x,y) in Minecraft.
-- [x] Calculates the shortest distance between the two coordinates and its angle.
-- [x] Displays the travel time in minutes.
+## 📝Features & Projects
+- [x] Minecraft Travel Time Mapper: with two coordinates, determine the angle you need to travel at for the shortest travel distance.
+- [x] My International Baccalaureate CAS Portfolio. 
 - [x] Minimalistic and simple UI.
 
 ## ✅ Information
